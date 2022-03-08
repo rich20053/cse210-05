@@ -1,2 +1,2 @@
 # cse210-05
-Team Repository for Cycle progra
+Team Repository for Cycle program
