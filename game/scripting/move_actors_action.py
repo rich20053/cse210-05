@@ -1,14 +1,16 @@
 from game.scripting.action import Action
 PACE = 3
 
-# TODO: Implement MoveActorsAction class here! 
-
-# Override the execute(cast, script) method as follows:
-# 1) get all the actors from the cast
-# 2) loop through the actors
-# 3) call the move_next() method on each actor
-
 class MoveActorsAction(Action):
+    """
+    An update action that handles movement of the actors.
+    
+    The responsibility of MoveActorsAction is to move each actor according to its velocity.
+
+    Attributes:
+        ???????????
+    """
+
     def __init__(self):
         self.pace = PACE
         self.speed = self.pace
