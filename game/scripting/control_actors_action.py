@@ -104,19 +104,19 @@ class ControlActorsAction(Action):
         # Change cycle speed
         if self._keyboard_service.is_key_down('1'):
             speedchange = script.get_first_action("update")
-            speedchange.set_speed(20)
+            speedchange.set_speed(9)
 
         if self._keyboard_service.is_key_down('2'):
             speedchange = script.get_first_action("update")
-            speedchange.set_speed(15)
+            speedchange.set_speed(7)
 
         if self._keyboard_service.is_key_down('3'):
             speedchange = script.get_first_action("update")
-            speedchange.set_speed(10)
+            speedchange.set_speed(5)
 
         if self._keyboard_service.is_key_down('4'):
             speedchange = script.get_first_action("update")
-            speedchange.set_speed(5)
+            speedchange.set_speed(3)
 
         if self._keyboard_service.is_key_down('5'):
             speedchange = script.get_first_action("update")
@@ -138,3 +138,11 @@ class ControlActorsAction(Action):
             all_obstacles = cast.get_actors("obstacles")
             for obstacle in all_obstacles:
                 obstacle.__init__()
+            all_prizes = cast.get_actors("prizes")
+            for prize in all_prizes:
+                prize.__init__()
+            self._ldirection = Point(0, -constants.CELL_SIZE)
+            self._rdirection = Point(0, -constants.CELL_SIZE)
+            self._new_game = False
+            self._last_ldirection = 'w'
+            self._last_rdirection = 'i'

@@ -1,7 +1,9 @@
-from game.casting.actor import Actor
+from game.casting.score import Score
+from game.shared.point import Point
 
+MAX_X = 900
 
-class Rscore(Actor):
+class Rscore(Score):
     """
     A record of points made or lost for the right side. 
     
@@ -14,14 +16,5 @@ class Rscore(Actor):
     """
     def __init__(self):
         super().__init__()
-        self._points = 0
-        self.add_points(0)
-
-    def add_points(self, points):
-        """Adds the given points to the score's total points.
-        
-        Args:
-            points (int): The points to add.
-        """
-        self._points += points
-        self.set_text(f"Score: {self._points}")
+        self.max_x = MAX_X - 100
+        self._position = Point(self.max_x, 0)

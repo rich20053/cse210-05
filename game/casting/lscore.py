@@ -1,7 +1,7 @@
-from game.casting.actor import Actor
+from game.casting.score import Score
+from game.shared.point import Point
 
-
-class Lscore(Actor):
+class Lscore(Score):
     """
     A record of points made or lost for the left side. 
     
@@ -14,14 +14,4 @@ class Lscore(Actor):
     """
     def __init__(self):
         super().__init__()
-        self._points = 0
-        self.add_points(0)
-
-    def add_points(self, points):
-        """Adds the given points to the score's total points.
-        
-        Args:
-            points (int): The points to add.
-        """
-        self._points += points
-        self.set_text(f"Score: {self._points}")
+        self._position = Point(40, 0)

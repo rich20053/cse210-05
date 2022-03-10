@@ -39,6 +39,20 @@ class Script:
             results = self._actions[group].copy()
         return results
     
+    def get_first_action(self, group):
+        """Gets the first action in the given group.
+        
+        Args:
+            group (string): The name of the group.
+
+        Returns:
+            Action: The first action in the group.
+        """
+        result = None
+        if group in self._actions.keys():
+            result = self._actions[group][0]
+        return result
+    
     def remove_action(self, group, action):
         """Removes an action from the given group.
         
