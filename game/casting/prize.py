@@ -21,7 +21,7 @@ class Prize(Actor):
         self.reset()
         
     def reset(self):
-        """Selects a random position for the Obstacle."""
+        """Selects a random position for the Prize."""
         x = random.randint(1, constants.COLUMNS- 1)
         y = random.randint(1, constants.ROWS - 1)
         position = Point(x, y)
