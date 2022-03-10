@@ -5,6 +5,8 @@ from game.casting.rscore import Rscore
 from game.casting.lscore import Lscore
 from game.casting.lcycle import Lcycle
 from game.casting.rcycle import Rcycle
+from game.casting.obstacle import Obstacle
+from game.casting.prize import Prize
 from game.scripting.script import Script
 from game.scripting.control_actors_action import ControlActorsAction
 from game.scripting.move_actors_action import MoveActorsAction
@@ -26,6 +28,14 @@ def main():
     cast.add_actor("lscore", Lscore())
     cast.add_actor("rscore", Rscore())
    
+    # add obstacles
+    for n in range(constants.OBSTACLES):
+        cast.add_actor("obstacles", Obstacle())
+
+    # add prizes
+    for n in range(constants.PRIZES):
+        cast.add_actor("prizes", Prize())
+
     # start the game
     keyboard_service = KeyboardService()
     video_service = VideoService()
@@ -33,7 +43,7 @@ def main():
     script = Script()
     script.add_action("input", ControlActorsAction(keyboard_service))
     script.add_action("update", MoveActorsAction())
-    script.add_action("update", HandleCollisionsAction())
+    script.add_action("check", HandleCollisionsAction())
     script.add_action("output", DrawActorsAction(video_service))
     
     director = Director(video_service)
