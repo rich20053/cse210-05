@@ -1,7 +1,7 @@
 from game.scripting.action import Action
 from game.shared.point import Point
 PACE = 5    #  How fast the snake will move - move once every 5 cycles
-GROWTH = 25 #  How fast the snake will grow - grow once every 25 cycles
+GROWTH = 5 #  How fast the snake will grow - grow once every 25 cycles
 
 
 class MoveActorsAction(Action):
@@ -47,12 +47,12 @@ class MoveActorsAction(Action):
             self.growth_speed = self.growth
             if not rcycle.is_game_over:
                 rscore.add_points(1)
-                rcycle.grow_tail(1)
+            rcycle.grow_tail(1)
             if not lcycle.is_game_over:
                 lscore.add_points(1)
-                lcycle.grow_tail(1)    
+            lcycle.grow_tail(1)    
 
     def set_speed (self, speed):
         self.pace = speed
-        self.growth = speed * 5
+        self.growth = speed
         

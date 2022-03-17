@@ -23,7 +23,9 @@ def main():
     
     # create the cast
     cast = Cast()
+    print("lcycle")
     cast.add_actor("lcycle", Lcycle())
+    print("rcycle")
     cast.add_actor("rcycle", Rcycle())
     cast.add_actor("lscore", Lscore())
     cast.add_actor("rscore", Rscore())

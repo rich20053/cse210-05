@@ -22,7 +22,6 @@ class Cycle(Actor):
         self._velocity = Point(0, -constants.CELL_SIZE)
         self.is_game_over = False
         self._segments = []
-        self._prepare_body()
 
     def get_segments(self):
         """Gets the cycle's segment list.
@@ -130,7 +129,7 @@ class Cycle(Actor):
         Returns:
             color: The cycle's color (r, g, b).
         """
-        return(constants.RED)
+        return(self._color)
 
     def set_game_over(self):
         """
@@ -138,6 +137,7 @@ class Cycle(Actor):
         
         """
         self.is_game_over = True
+        self._color = constants.WHITE
   
     def is_game_over(self):
         """

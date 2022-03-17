@@ -17,6 +17,8 @@ class Lcycle(Cycle):
             None.
         """
         super().__init__()
+        self._color = constants.RED
+        self._prepare_body()
     
     def get_cycle_x_start(self):
         """Gets the cycle's start position x value.
@@ -34,12 +36,4 @@ class Lcycle(Cycle):
         """
         return(int(constants.CELL_SIZE * (constants.ROWS / 2)))
     
-    def get_color(self):
-        """Gets the cycle's color.
-        
-        Returns:
-            color: The cycle's color (r, g, b).
-        """
-        return(constants.RED)
-  
-
+ 
